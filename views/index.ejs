@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title> 
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper-header">
+      <div class="box-branch">
+        <div class="logo-header">
+          <img class="image-logo" src="/image/logo.png" alt="Header" />
+        </div>
+        <div class="text-branch" onclick="window.location.href = '/'">
+          Ninedev
+        </div>
+      </div>
+      <div class="box-nav">
+        <div class="nav-link" onclick="window.location.href = '/products'">Home</div>
+        <div class="nav-link" onclick="window.location.href = '/products/create'">
+          Create
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper-body">
+      <h2 style="text-align: center; margin-bottom: 20px;">Danh sách sản phẩm</h2>
+      
+      <div class="products-grid" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 20px;">
+        
+        <% if (products && products.length > 0) { %>
+          <% products.forEach(product => { %>
+            
+            <div class="product-item" onclick="window.location.href = '/products/<%= product.id %>'" style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; width: 220px; cursor: pointer; text-align: center; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+              <img src="<%= product.image %>" alt="<%= product.name %>" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;" />
+              <h3 style="font-size: 16px; margin: 10px 0 5px 0; color: #333;"><%= product.name %></h3>
+              <p style="color: #ff4d4f; font-weight: bold; margin: 0;"><%= product.price %></p>
+            </div>
+
+          <% }) %>
+        <% } else { %>
+          <p>Không có sản phẩm nào để hiển thị.</p>
+        <% } %>
+
+      </div>
+    </div>
+  </body>
+</html>
