@@ -1,0 +1,10 @@
+// Viết code Controller của User vào đây nhé!
+const users = [
+    { id: 1, name: "Nguyen Van A", email: "a@gmail.com" },
+    { id: 2, name: "Tran Thi B", email: "b@gmail.com" },
+    { id: 3, name: "Le Van C", email: "c@gmail.com" }
+];
+
+exports.getAllUsers = (req, res) => {
+    res.json(users);
+};

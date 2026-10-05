@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <div class="wrapper-header">
+        <div class="box-branch">
+            <div class="logo-header">
+                <img class="image-logo" src="/image/logo.png" alt="Header" />
+            </div>
+            <div class="text-branch">Ninedev</div>
+        </div>
+        <div class="box-nav">
+            <div class="nav-link active">Home</div>
+            <div class="nav-link">Create</div>
+        </div>
+    </div>
+    <div class="wrapper-body">
+        <h1><%= message %></h1>
+        <p>Kết quả tính toán: <%= sum %></p>
+        <% products.forEach(item => { %>
+        <div class="box-items">
+            <div class="group-image">
+                <img 
+                    class="image-main" 
+                    src="<%= item.image %>" 
+                    alt="<%= item.name %>" 
+                />
+            </div>
+            <div class="group-content">
+                <div class="text-main"><%= item.name %></div>
+                <div class="text-sub"><%= item.description %></div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</body>
+</html>
